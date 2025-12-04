@@ -1,0 +1,150 @@
+/* =========================================================
+   PRORE FULLSCREEN — 전체 레이아웃
+========================================================= */
+
+/* 
+  ★ 수정됨
+  overflow: hidden → 삭제 (슬라이드2 카드 잘림 방지)
+*/
+.prore-section-full {
+  width: 100%;
+  height: 100vh;
+  /* overflow: hidden;  */   /* ← 제거 */
+}
+
+.prore-fullscreen-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.prore-fullscreen-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* 모든 슬라이드 공통 base */
+/*
+  ★ 수정됨
+  overflow: hidden → 삭제 (슬라이드2 카드 잘림 방지)
+*/
+.prore-slide {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */    /* ← 제거 */
+}
+
+
+/* =========================================================
+   PLAY / PAUSE 버튼
+========================================================= */
+.prore-samsung-play {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ★ !important 제거됨 */
+.prore-samsung-play svg rect,
+.prore-samsung-play svg path {
+  fill: currentColor;
+}
+
+
+/* =========================================================
+   BOTTOM BAR (삼성 스타일)
+========================================================= */
+.prore-samsung-bottom {
+  display: flex;
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.prore-samsung-bars {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.prore-samsung-bar {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prore-samsung-bar-num {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: currentColor;
+}
+
+/* 진행바 트랙 */
+.prore-samsung-bar-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+/* 진행바 채움 */
+.prore-samsung-bar-fill {
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.05s linear;
+}
+
+
+/* =========================================================
+   COLOR THEMES (currentColor 기준)
+========================================================= */
+.prore-samsung-bottom.theme-dark {
+  color: #ffffff;
+}
+
+/* 
+.prore-samsung-bottom.theme-light {
+  color: #000000;
+}
+*/
+
+
+/* =========================================================
+   공통 애니메이션
+========================================================= */
+
+@keyframes proreFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes proreBloomBreath {
+  0%   { transform: scale(1); opacity: 0.95; }
+  50%  { transform: scale(1.25); opacity: 0.70; }
+  100% { transform: scale(1); opacity: 0.95; }
+}
+
+@keyframes proreWave {
+  0%   { background-size: 100%; }
+  50%  { background-size: 103%; }
+  100% { background-size: 100%; }
+}

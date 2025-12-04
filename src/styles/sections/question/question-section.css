@@ -1,0 +1,74 @@
+/* ==========================================
+   마지막 문의 섹션 
+========================================== */
+
+.question-final-section {
+  --title-size: 45px;     /* ★ 메인 타이틀 크기 */
+  --desc-size: 20px;      /* ★ 설명 문구 크기 */
+  --button-size: 18px;    /* ★ 버튼 글씨 크기 */
+
+  width: 100%;
+  padding: 150px 20px;
+  background: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 1px solid #fff;      /* ← ★ 상단 구분 라인 추가 */
+  border-bottom: 1px solid #fff;   /* ← ★ 하단 구분 라인 (푸터와 구분) */
+}
+
+/* 내용 래퍼 */
+.question-wrapper {
+  text-align: center;
+  max-width: 760px;
+}
+
+/* ------------------------------------------
+   메인 타이틀
+------------------------------------------- */
+.question-title {
+  font-size: var(--title-size);
+  font-weight: 700;
+  color: #ffffff;
+
+  margin-bottom: 24px;
+  line-height: 1.32;
+  letter-spacing: -0.5px;
+}
+
+/* ------------------------------------------
+   설명 문구
+------------------------------------------- */
+.question-desc {
+  font-size: var(--desc-size);
+  color: #dcdcdc;
+
+  margin-bottom: 40px;
+  line-height: 1.55;
+  letter-spacing: -0.2px;
+}
+
+/* ------------------------------------------
+   버튼 (반전 스타일)
+------------------------------------------- */
+.question-btn {
+  display: inline-block;
+  padding: 20px 54px;
+
+  background: #ffffff;
+  color: #000000;
+
+  border-radius: 12px;
+
+  font-size: var(--button-size);
+  font-weight: 600;
+
+  transition: 0.28s ease;
+}
+
+.question-btn:hover {
+  background: #e5e5e5;
+  color: #000;
+}

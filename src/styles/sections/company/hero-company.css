@@ -1,0 +1,105 @@
+/* src/styles/hero-company.css */
+
+
+.hero-kakao {
+  position: relative;
+  height: 100vh;
+  background: radial-gradient(
+    circle at 50% 20%,
+    #0b2c4a 0%,
+    #071f38 45%,
+    #04162a 85%
+  );
+  overflow: hidden;
+
+  /* 추가: 기업형 Hero는 중앙보다 약간 위로 배치해야 화면이 안정됨 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 6vh;
+}
+
+/* 회로 캔버스 */
+.hero-bg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 1;
+  filter: blur(0.6px) brightness(1.2);
+}
+
+/* ------------------------------------------------
+   메인 타이틀 (3줄)
+   - 글자 크기 · 굵기 그대로 유지
+   - 줄 간격은 2번 스타일(타이트) 일관성 위해 선택 옵션으로 아래에 추가
+------------------------------------------------- */
+.hero-title {
+  font-size: 4.2rem;        /* ★ 수정: 기업형 Hero 크기 (3rem → 4.2rem) */
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+
+  line-height: 1.12;        /* ★ 활성화: 줄 간격 압축해서 3줄이 한 덩어리처럼 보이도록 */
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s forwards;
+  z-index: 10;
+
+  max-width: 1100px;        /* ★ 추가: 글자 너무 퍼지는 것 방지 → width 제한 */
+  margin-left: auto;        /* ★ 가운데 정렬 */
+  margin-right: auto;
+  text-align: center;       /* ★ 글자 정렬 통일 (브라우저 렌더링 오차 방지) */
+}
+
+/* ★ 추가: 타이틀 줄 간 간격 미세 조정 */
+.hero-title + .hero-title {
+  margin-top: 0.6rem;       /* 줄 사이 적절한 균형값 */
+}
+
+/* 두 번째 줄 딜레이 */
+.delay-1 { 
+  animation-delay: 0.2s; 
+}
+
+/* 세 번째 줄 딜레이 */
+.delay-2 { 
+  animation-delay: 0.4s; 
+}
+
+/* ------------------------------------------------
+   ★ 기존 hero-sub는 JSX에서 타이틀로 이동했기 때문에
+     삭제는 하지 않음 (요청: 임의 삭제 금지)
+   ★ 보관용 클래스로 그대로 둠
+------------------------------------------------- */
+.hero-sub {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  color: rgba(210, 235, 255, 0.85);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.2s forwards;
+  animation-delay: 0.45s;
+  z-index: 10;
+}
+
+/* ------------------------------------------------
+   Scroll indicator
+------------------------------------------------- */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  font-size: 1rem;
+  color: rgba(190, 220, 245, 0.7);
+  opacity: 0;
+  animation: fadeUp 1.2s forwards;
+  animation-delay: 0.8s;
+  z-index: 10;
+}
+
+/* 공통 등장 애니메이션 */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}

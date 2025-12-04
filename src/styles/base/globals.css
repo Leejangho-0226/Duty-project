@@ -1,0 +1,58 @@
+/* =========================================================
+    메인 배경 Blob 애니메이션
+   - 부드러운 흐름 + 은은한 컬러
+   - 야경 배경 영상 위에 덮어도 안정적인 밝기
+========================================================= */
+
+.hero-blob {
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* 텍스트보다 뒤, 배경 영상보다 위 */
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 20% 20%, #8cb3ff55, transparent 55%),
+    radial-gradient(circle at 80% 30%, #ffd1dc55, transparent 55%),
+    radial-gradient(circle at 50% 80%, #baf7c855, transparent 55%);
+
+  animation: blobMove 14s infinite alternate ease-in-out;
+  filter: blur(70px);
+}
+
+/* Blob 움직임 */
+@keyframes blobMove {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-40px, 30px) scale(1.25); }
+  100% { transform: translate(40px, -20px) scale(1.1); }
+}
+
+
+/* =========================================================
+    텍스트 등장 애니메이션
+========================================================= */
+
+/* 부드러운 페이드 인 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* 조금 더 위에서 올라오는 효과 */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slideUp {
+  animation: slideUp 1.2s ease-out 0.3s forwards;
+}
+
+/* 글자 순차 등장에 쓸 수 있는 delay 유틸 */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }

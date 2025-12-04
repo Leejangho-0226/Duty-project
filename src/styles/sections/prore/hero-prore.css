@@ -1,0 +1,86 @@
+/* ================================
+   PRORE HERO 영역 전체 스타일
+================================ */
+
+/* 배경 */
+.prore-wrapper {
+  background: linear-gradient(180deg, #f9fbff 0%, #eef3f9 100%);
+}
+
+/* 라벨 */
+.prore-label {
+  color: #3478ff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+/* 제목 */
+.prore-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  color: #0a2540;
+  line-height: 1.3;
+}
+
+/* 설명 */
+.prore-desc {
+  margin-top: 1.2rem;
+  color: #4b5563;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* 리스트 */
+.prore-list li {
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+/* 카드 영역 */
+.prore-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ★★ Hero 전용 카드 — 클래스명 변경됨 */
+.prore-hero-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.prore-hero-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 38px rgba(0,0,0,0.12);
+}
+
+/* 작은 카드 */
+.prore-hero-card.small {
+  width: 80%;
+  backdrop-filter: blur(4px);
+}
+
+/* 애니메이션 */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards;
+}
+
+.fade-up-delay {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s 0.2s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

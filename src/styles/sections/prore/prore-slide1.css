@@ -1,0 +1,147 @@
+/* =========================================================
+   PRORE — SLIDE ONE (Split Hero)
+   첫 번째 슬라이드 전용 스타일
+========================================================= */
+
+/* -----------------------------
+   슬라이드 전체
+------------------------------ */
+.prore-slide-one {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: url("/src/assets/images/prore/slide-background.png")
+    center/cover no-repeat;
+
+  /* 배경 숨쉬는 웨이브 */
+  animation: proreWave 18s ease-in-out infinite;
+  overflow: hidden;
+}
+
+/* -----------------------------
+   블루 라이트 숨쉬기 효과
+------------------------------ */
+.prore-slide-one::after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  top: 25%;
+
+  width: 650px;
+  height: 650px;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 150, 255, 0.8) 0%,
+    rgba(0, 100, 230, 0.45) 35%,
+    rgba(0, 40, 120, 0.05) 80%
+  );
+
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+
+  animation: proreBloomBreath 6s ease-in-out infinite;
+}
+
+/* -----------------------------
+   내부 메인 컨텐츠
+------------------------------ */
+.prore-s1-inner {
+  width: 100%;
+  max-width: 1500px;
+  height: 100%;
+  padding: 0 7vw;  /* ★ 전체 여백 — 글씨를 왼/오른쪽으로 움직이고 싶으면 이 숫자 조절 */
+
+  display: grid;
+  align-items: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* -----------------------------
+   텍스트
+------------------------------ */
+
+/* 상단 BLUE 라벨 */
+.s1-label {
+  color: #76a6ff;
+  font-weight: 800;
+  font-size: 32px; /* ★ 라벨 텍스트 크기 조절 포인트 */
+}
+
+/* 메인 타이틀 */
+.s1-title {
+  margin-top: 12px;           /* ★ 제목 위 간격 */
+  font-size: clamp(32px, 3.2vw, 50px); /* ★ 제목 크기 — 최소/중간/최대값 직접 조절 가능 */
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.25;          /* ★ 줄간격 숫자 변경하면 타이틀 간격 조절 */
+}
+
+/* 설명문 */
+.s1-desc {
+  margin-top: 18px;           /* ★ 제목과 설명문 사이 간격 */
+  font-size: clamp(14px, 1.2vw, 18px); /* ★ 설명문 크기 조절 */
+  max-width: 500px;           /* ★ 설명문 너비 조절 */
+  color: #dce5ff;
+  line-height: 1.7;           /* ★ 줄간격 조절 */
+}
+
+/* -----------------------------
+   버튼
+------------------------------ */
+.s1-button {
+  display: inline-block;
+  margin-top: 30px;           /* ★ 버튼 위 간격 */
+  padding: 14px 26px;         /* ★ 버튼 내부 여백(크기) */
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+
+  color: #ffffff;
+  font-weight: 700;
+
+  font-size: 16px;            /* ★ 버튼 글씨 크기 */
+  transition: 0.25s ease;
+}
+
+.s1-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* -----------------------------
+   바텀 바 영역
+------------------------------ */
+.prore-s1-bottom {
+  margin-top: 40px;           /* ★ 진행바와 본문 사이 간격 */
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+/* 블루 라이트 숨쉬기 */
+@keyframes proreBloomBreath {
+  0% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.25); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 0.95; }
+}
+
+/* 배경 숨쉬기 웨이브 */
+@keyframes proreWave {
+  0%   { background-size: 100%; }
+  50%  { background-size: 103%; }
+  100% { background-size: 100%; }
+}
+
+/* 텍스트 페이드 업 */
+@keyframes proreFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
