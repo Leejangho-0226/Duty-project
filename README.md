@@ -105,9 +105,11 @@ Build / Tools
 
 - PostCSS
 
-📂 프로젝트 구조 (최신 업데이트 버전)
+## 📂 프로젝트 구조 (최신 업데이트 버전)
 
-아래는 네 프로젝트 전체 구조 + 각 파일 역할 설명 포함한 트리 완성본.
+아래는 프로젝트 전체 구조 + 각 파일 역할 설명이 포함된 완성 트리입니다.
+
+```
 duty3/
 │
 ├─ public/
@@ -126,13 +128,13 @@ duty3/
 │   │       └─ partnersWave.js        # PartnersSection 배경 웨이브
 │   │
 │   ├─ components/
-│   │   ├─ common/                    # 모든 페이지에서 공통으로 쓰이는 UI
+│   │   ├─ common/                    # 모든 페이지 공용 UI 컴포넌트
 │   │   │   ├─ BrandCard.jsx
 │   │   │   ├─ Footer.jsx
 │   │   │   ├─ Header.jsx
 │   │   │   └─ PartnersWaveCanvas.jsx
 │   │   │
-│   │   └─ prore/                     # Prore 전용 슬라이더 시스템
+│   │   └─ prore/                     # Prore 섹션 전용 슬라이더 시스템
 │   │       ├─ fullscreen/
 │   │       │   ├─ controls/
 │   │       │   │   └─ PlayPauseButton.jsx   # 슬라이더 재생/정지 버튼
@@ -141,12 +143,12 @@ duty3/
 │   │       │       ├─ SlideTwo.jsx
 │   │       │       └─ SlideThree.jsx
 │   │       │
-│   │       └─ ProreFullscreenSlider.jsx      # Swiper 전체 묶음 슬라이더
+│   │       └─ ProreFullscreenSlider.jsx      # Swiper 전체 슬라이더 묶음
 │   │
 │   ├─ pages/
-│   │   └─ HomePage.jsx               # 메인 페이지 (모든 섹션 조립)
+│   │   └─ HomePage.jsx               # 메인 페이지(모든 섹션 조립)
 │   │
-│   ├─ sections/                      # 홈페이지 섹션 단위 UI
+│   ├─ sections/                      # 홈페이지 주요 섹션 UI
 │   │   ├─ CompanyHero.jsx
 │   │   ├─ DutyOnSection.jsx
 │   │   ├─ HealingSection.jsx
@@ -156,7 +158,7 @@ duty3/
 │   │
 │   ├─ styles/
 │   │   ├─ base/
-│   │   │   └─ globals.css            # 전역 리셋/폰트/기본 스타일
+│   │   │   └─ globals.css            # 전역 폰트/리셋/기본 스타일
 │   │   │
 │   │   ├─ common/
 │   │   │   ├─ footer.css             # Footer 전용 스타일
@@ -164,13 +166,13 @@ duty3/
 │   │   │
 │   │   └─ sections/
 │   │       ├─ company/
-│   │       │   └─ hero-company.css   # CompanyHero
+│   │       │   └─ hero-company.css   # CompanyHero 스타일
 │   │       ├─ dutyon/
-│   │       │   └─ hero-dutyon.css
+│   │       │   └─ hero-dutyon.css    # DutyOn 섹션 스타일
 │   │       ├─ healing/
-│   │       │   └─ hero-healing.css
+│   │       │   └─ hero-healing.css   # HealingYou 스타일
 │   │       ├─ partners/
-│   │       │   └─ partners-section.css
+│   │       │   └─ partners-section.css # PartnersSection 스타일
 │   │       └─ prore/
 │   │           ├─ hero-prore.css
 │   │           ├─ prore-fullscreen.css
@@ -178,17 +180,19 @@ duty3/
 │   │           ├─ prore-slide2.css
 │   │           └─ prore-slide3.css
 │   │
-│   ├─ App.css                         # App 전용 스타일(드물게 사용)
+│   ├─ App.css                         # App 전용 스타일 (거의 사용 X)
 │   ├─ App.jsx                         # 루트 컴포넌트
-│   ├─ index.css                       # Tailwind 엔트리
+│   ├─ index.css                       # Tailwind CSS 엔트리
 │   └─ main.jsx                        # 앱 진입 파일 (전역 스타일 import)
 │
 ├─ package.json
 ├─ package-lock.json
-├─ tailwind.config.js                  # Tailwind 설정
+├─ tailwind.config.js                  # Tailwind 설정 파일
 ├─ postcss.config.js                   # PostCSS 구성
 ├─ vite.config.js                      # Vite 설정
 └─ README.md                           # 이 문서
+```
+
 
 🧩 핵심 코드 구조 요약
 1) 앱 진입 파일 — main.jsx
